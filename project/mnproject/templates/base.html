@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{title}}</title>
+    <style>
+        *{
+            font-family: "Segoe UI",Arial,sans-serif
+        }
+        body{
+            background:url(https://i.pinimg.com/originals/85/6f/31/856f31d9f475501c7552c97dbe727319.jpg);
+        }
+        .header{
+            background-color: #000000;
+		    padding: 8px 16px;
+		    width: 100% ;
+		    position: fixed;
+		    z-index: 100;
+		    top: 0;
+		    left: 0;
+            text-align: center;
+
+        }
+        .header > div {
+    	    display: inline-block;
+    	    vertical-align: middle;
+
+        }
+        .nav {
+    	display: inline-block;
+        position: relative;
+
+        }
+        .nav__items{
+            margin: 0px;
+            padding: 0;
+            padding-right: 20px;
+            list-style: none;
+        }
+        .nav__item{
+            display: inline-block;
+            padding-left:8px;
+            padding-right:8px;
+            font-size: 19px;
+            font-weight:bold;
+        }
+        .nav__item a{
+            color:#ffffff;
+            text-decoration: none;
+        }
+        
+        .nav__item a:hover {
+            color: #ffe4c4;
+            /* border-bottom:3px solid #cecece; */
+        }
+        .nav__item a:active{
+            color: #ffe4c4;
+            /* border-bottom:3px solid #cecece; */
+        }
+        .nav__home a{
+            color: #ffe4c4;
+            text-decoration: none;
+            border-bottom:3px solid #ffffff;
+        }
+        .nav__home a:hover {
+            color: #ffffff;
+            border-bottom:3px solid #ffe4c4;
+        }
+        .nav__home a:active{
+            color: rgb(255, 255, 255);
+            border-bottom:3px solid #ffe4c4;
+        }
+        .wellcome {
+            position: relative;
+			padding: 10px;
+			margin-top: 10px;
+        }
+        wellcome > div{
+            display: inline-block;
+        }
+        .wellcome-div-p
+        {
+            font-size: 50px;
+            color: #000000;
+		    text-align: center;
+            font-weight: bold;
+            border-bottom:3px solid #000000;
+        }
+        .body{
+            background-image: url("https://images.ctfassets.net/yr4qj72ki4ky/6G2JeQnM8bsnjgoJBjljCh/f30782e127727ee309ebf87fb59cf446/best-programming-languages-2020-Hero.jpg");
+            background-size:cover;
+        }
+        .products_section{
+            position: relative;
+            text-align: center;
+            margin-top: 80px;
+        }
+        .products{
+            display:inline-block;
+            padding: 10px 50px 30px 50px ;
+            background-color: rgb(255, 250, 250, 0.9) ;
+            margin: 2px 0px 2px 0px;
+            border-radius: 10%;
+        }
+        .products:hover{
+            background-color: rgb(255, 250, 250) ;
+        }
+        .product{
+            color: rgb(26, 26, 26);
+        }
+
+        /* .button{
+            padding: 5px 40px 5px 40px ;
+            background-color: #1d2731 ;
+            color:white;
+        }
+        .button:hover{
+            background-color: #FFFAFA;
+            color: black;
+        } */
+        .button {
+			text-decoration: none;
+            font-size: 13px;
+            color:white;
+			cursor: pointer;
+            background-color: #1d2731 ;
+            padding: 5px 40px 5px 40px ;
+			border-top: 2px solid rgb(100, 100, 100);
+			border-left: 2px solid rgb(100, 100, 100);
+			border-bottom: 2px solid rgb(20, 20, 20);
+			border-right: 2px solid rgb(20, 20, 20);
+			border-radius: 0.5px;
+			}
+		.button:hover{
+            background-color: #FFFAFA;
+			color: black;
+			}
+		.button:active{
+			border-bottom: 2px solid rgb(100, 100, 100);
+			border-right: 2px solid rgb(100, 100, 100);
+			border-left: 2px solid rgb(20, 20, 20);
+			border-top: 2px solid rgb(20, 20, 20);
+		}
+        .button_rev{
+            text-decoration: none;
+            font-size: 13px;
+            color:black;
+			cursor: pointer;
+            background-color: #FFFAFA;
+            padding: 5px 40px 5px 40px ;
+			border-top: 2px solid rgb(100, 100, 100);
+			border-left: 2px solid rgb(100, 100, 100);
+			border-bottom: 2px solid rgb(20, 20, 20);
+			border-right: 2px solid rgb(20, 20, 20);
+			border-radius: 0.5px;
+        }
+		.button_rev:hover{
+            background-color: #1d2731 ;
+			color: white;
+			}
+		.button_rev:active{
+			border-bottom: 2px solid rgb(100, 100, 100);
+			border-right: 2px solid rgb(100, 100, 100);
+			border-left: 2px solid rgb(20, 20, 20);
+			border-top: 2px solid rgb(20, 20, 20);
+		}
+        .button_rev_w{
+            text-decoration: none;
+            font-size: 13px;
+            color:black;
+			cursor: pointer;
+            background-color: white;
+            padding: 5px 40px 5px 40px ;
+			border-top: 2px solid rgb(100, 100, 100);
+			border-left: 2px solid rgb(100, 100, 100);
+			border-bottom: 2px solid rgb(20, 20, 20);
+			border-right: 2px solid rgb(20, 20, 20);
+			border-radius: 0.5px;
+        }
+		.button_rev_w:hover{
+            background-color: #1d2731 ;
+			color: white;
+			}
+		.button_rev_w:active{
+			border-bottom: 2px solid rgb(100, 100, 100);
+			border-right: 2px solid rgb(100, 100, 100);
+			border-left: 2px solid rgb(20, 20, 20);
+			border-top: 2px solid rgb(20, 20, 20);
+		}
+        /* For basket.html */
+        .basket_list_section{
+            margin-top: 80px;
+        }
+        .basket_items{
+            padding: 0;
+            margin: 0;
+            display: block;
+            box-sizing: border-box;
+        }
+        
+        .basket_item{
+            border: 1px solid #ddd;
+            margin-top: -1px;
+            background-color: #f6f6f6;
+            padding: 12px;
+            text-decoration: none;
+            font-size: 18px;
+            color: black;
+            box-sizing: border-box;
+            
+        }
+        .basket_item_detail{
+            float: left;
+            width: 20%;
+            text-align: center;
+            vertical-align: middle;
+            margin: 0;
+        }
+        .basket_checkout{
+            display: flex;
+            float: left;
+            width: 25%;
+            text-align: center;
+            vertical-align: middle;
+            font-size: 20px;
+            font-weight: 500;
+            justify-content: space-around;
+            background-color: whitesmoke;
+            border: 1px solid #ddd;
+            padding: 10px;
+        }
+        /* input[type=number]::-webkit-inner-spin-button, 
+        input[type=number]::-webkit-outer-spin-button { 
+            -webkit-appearance: none; 
+        margin: 0; 
+        } */
+        input[type=number] {
+        text-align: center;
+        width: 30px;
+        line-height: 25px;
+        background-color: #1d2731;
+        color: whitesmoke;
+        }
+        .empty_basket{
+            font-weight:1000;
+            font-size: 40px;
+            text-align: center;
+        }
+        .empty_basket_text{
+            margin-bottom: 10px;
+        }
+        .empty_basket_button{
+            font-size: 30px;
+        }
+        .global_footer{
+            position: fixed;
+            padding: 0;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 30px;
+            background: black;
+        }
+        .global_footer_items{
+            text-align: center;
+            position: relative;
+        }
+        .global_footer_item{
+            font-size: 15px;
+            color: white;
+            margin: 5px;
+        }
+        .welcome-dir{
+            box-sizing: border-box;
+
+        }
+        .welcome-dir-item{
+            float: left;
+            width: 50%;
+            padding: 0px;
+        }
+    </style>
+</head>
+{% block content %}
+
+{% endblock %}
+<footer class="global_footer" style="z-index: 1">
+    <div class="global_footer_items">
+        <p class="global_footer_item">This page is a Django Project For Software Engineering Class | Programmers: Omid and Sorosh | 2021</p>
+    </div>
+</footer>
+</html>

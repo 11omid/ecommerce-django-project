@@ -1,0 +1,46 @@
+{% include 'base.html' %}
+{% block content %}
+
+<body class="body">
+    <header class="header">
+		<nav class="nav">
+			<ul class="nav__items">
+                <li class="nav__item ">
+                    <a href="{% url 'productapp:home' %}">Home</a>
+                </li>
+				<li class="nav__item nav__home">
+					<a href="{% url 'productapp:products' %}">Products</a>
+				</li >
+				<li class="nav__item ">
+					<a href="{% url 'productapp:basket' %}">Basket</a>
+				</li>
+                <li class="nav__item" >
+					<a href="{% url 'admin:index' %}">Login</a>
+				</li>
+			</ul>
+		</nav>
+	</header>   
+    <section class="products_section" style="margin-bottom: 50px;">
+        <h1 class="products_section_h1" style="color: #ffffff;">Our Tutorials</h1>       
+            {% if products_list %}
+                {% for product in products_list %}
+                    <div class="products">
+                        <div class="product">
+                            <img src="../{{product.product_pic}}" style="width:200px; border: 2px solid #051218;">
+                            <p style="font-size: 22px;">{{product.products_name}}</p>
+                            <p>Price: {{product.price}}</p>
+                            <p style="font-weight: bold;">{{product.note}}</p>
+                            <form method="POST" action="{% url 'productapp:addtobasket' product.id %}">
+                                {% csrf_token %}
+                                <input min="1" value=1 type="number" name="amount">
+                                <input class="button" type="submit" value="Add to Basket">
+                            </form>
+                        </div>
+                    </div>
+                {% endfor %}
+            {% else %}
+                <p>No products avalable at this moment.</p>
+            {% endif %}
+    </section>
+</body>
+{% endblock %}
